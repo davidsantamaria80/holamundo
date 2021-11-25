@@ -13,6 +13,11 @@ def listar():
     f = open("demofile2.txt", "r")
     return(f.read())
 
+@app.delete("/borrar")
+def borrar():
+    open("demofile2.txt","w").close
+    return {"borrado:ok"}
+
 @app.post("/alta/{nombre}/{telefono}")
 def dar_alta(nombre: str, telefono: str):
     f = open("demofile2.txt", "a")
